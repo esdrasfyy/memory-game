@@ -1,0 +1,195 @@
+:root {
+  --card-back: url(../images/images.png);
+  --card-front: url(../images/morty.png);
+}
+.hidden {
+  display: none;
+}
+body {
+  height: 100vh;
+  background-color: #1d2024;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+header > div {
+  display: flex;
+  width: 778px;
+  justify-content: space-between;
+  align-items: center;
+  margin: 40px 20px;
+}
+header > div span {
+  font-family: "Montserrat", sans-serif;
+  font-size: 25px;
+  text-transform: uppercase;
+  color: #ed145b;
+}
+#clock {
+  position: relative;
+}
+#clock:before {
+  content: "";
+  position: absolute;
+  width: 60px;
+  height: 2px;
+  left: 25%;
+  bottom: -10px;
+  background-color: #fff;
+}
+#timer {
+  color: #fff;
+}
+#nick {
+  position: relative;
+}
+#nick:before {
+  content: "";
+  position: absolute;
+  width: 60px;
+  height: 2px;
+  left: 40%;
+  bottom: -10px;
+  background-color: #fff;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.075);
+}
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  max-width: 1200px;
+}
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  margin: 0 20px;
+}
+.card {
+  aspect-ratio: 3/4;
+  border-radius: 5px;
+  max-width: 170px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.075);
+  position: relative;
+  transition: all 400ms ease;
+  transform-style: preserve-3d;
+}
+.revel-card {
+  transform: rotateY(180deg);
+}
+.disabled-card {
+  filter: saturate(1);
+  opacity: 0.5;
+}
+.face {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-size: cover;
+  background-position: center top;
+  border: 3px solid #ed145b;
+  border-radius: 5px;
+  transition: all 600ms ease;
+}
+.back {
+  background-image: var(--card-back);
+  backface-visibility: hidden;
+}
+
+#span {
+}
+#modall {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  background: rgba(255, 255, 255, 0.295);
+  box-shadow: 0 8px 32px 0 rgba(163, 169, 247, 0.219);
+  backdrop-filter: blur(9.5px);
+  -webkit-backdrop-filter: blur(9.5px);
+
+  border: 5px solid #a1a1a1;
+  border-radius: 5px;
+
+  padding: 50px 20px;
+  line-height: 25px;
+
+  transition: all ease 0.5s;
+  animation: inherit;
+}
+#modall p {
+  background-color: #a1a1a1;
+  padding: 5px 0px 0px 8px;
+}
+#timer-modal {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+  width: auto;
+  max-width: 100px;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: #a1a1a1;
+  padding: 5px 8px 0px 8px;
+}
+
+#spantres {
+  display: flex;
+  justify-content: space-around;
+}
+#modall button {
+  padding: 15px;
+  margin-top: 25px;
+  border: #d1d1d1 solid 4px;
+  border-radius: 5px;
+
+  background: #a1a1a1;
+
+  cursor: pointer;
+  transition: 7ms;
+}
+#modall button:hover {
+  background-color: #a1a1a1;
+  border: solid rgb(126, 126, 126);
+}
+
+@media (max-width: 780px) {
+  .card {
+    max-width: 130px;
+    width: 100%;
+  }
+}
+@media (max-width: 480px) {
+  .card {
+    max-width: 90px;
+    width: 100%;
+  }
+  .face {
+    border: 2px solid #ed145b;
+  }
+  .grid {
+    margin: 0 10px;
+  }
+}
+@media (max-width: 420px) {
+  header > div span {
+    font-family: "Montserrat", sans-serif;
+    font-size: 18px;
+    text-transform: uppercase;
+    color: #ed145b;
+  }
+}
